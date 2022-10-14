@@ -49,8 +49,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `musicdb`;
-INSERT INTO `song` (`id`, `title`, `artist`, `featured_artist`, `album`, `length_seconds`, `date_released`, `video_url`, `album_url`) VALUES (1, 'tadow', 'masego, fkj', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `song` (`id`, `title`, `artist`, `featured_artist`, `album`, `length_seconds`, `date_released`, `video_url`, `album_url`) VALUES (2, 'another love', 'tom odell', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `song` (`id`, `title`, `artist`, `featured_artist`, `album`, `length_seconds`, `date_released`, `video_url`, `album_url`) VALUES (1, 'Tadow', 'Masego, FKJ', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `song` (`id`, `title`, `artist`, `featured_artist`, `album`, `length_seconds`, `date_released`, `video_url`, `album_url`) VALUES (2, 'Tnother love', 'Tom Odell', NULL, NULL, NULL, NULL, NULL, NULL);
 
 COMMIT;
 
