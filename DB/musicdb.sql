@@ -24,10 +24,13 @@ CREATE TABLE IF NOT EXISTS `song` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `artist` VARCHAR(45) NULL,
-  `featured_artist` VARCHAR(45) NULL,
   `album` VARCHAR(45) NULL,
+  `is_single` TINYINT NULL,
+  `featured_artist` VARCHAR(45) NULL,
+  `remix_by` VARCHAR(45) NULL,
+  `genre` VARCHAR(45) NULL,
   `length_seconds` INT NULL,
-  `date_released` DATE NULL,
+  `release_year` INT NULL,
   `video_url` VARCHAR(45) NULL,
   `album_url` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
@@ -49,8 +52,11 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `musicdb`;
-INSERT INTO `song` (`id`, `title`, `artist`, `featured_artist`, `album`, `length_seconds`, `date_released`, `video_url`, `album_url`) VALUES (1, 'Tadow', 'Masego, FKJ', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `song` (`id`, `title`, `artist`, `featured_artist`, `album`, `length_seconds`, `date_released`, `video_url`, `album_url`) VALUES (2, 'Another love', 'Tom Odell', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (1, 'Tadow', 'Masego', 'Lady Lady', NULL, 'FKJ', NULL, 'Electronic/Jazz', 301, 2017, '=hC8CH0Z3L54&ab_channel=Fkj', '');
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (2, 'Another love', 'Tom Odell', NULL, 1, NULL, 'Zwette', 'House', 394, 2013, '=4ZHwu0uut3k&ab_channel=TheSoundYouNeed', NULL);
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (3, 'Dancin', 'Aaron Smith', NULL, 1, NULL, 'Krono', 'Deep House', 256, 2013, '=0XFudmaObLI&ab_channel=TheSoundYouNeed', NULL);
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (4, 'Blue Lagoon', 'LVSN & FIXL', NULL, 1, 'Finn Kleffmann', NULL, 'Tropical House', 188, 2021, '=MjCvkWEfgKc&ab_channel=TropicalHouseRecords', NULL);
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (5, 'Stolen Dance', 'Milky Chance', 'Sadnecessary', 1, NULL, NULL, 'Indie Pop', 313, 2013, '=iX-QaNzd-0Y&ab_channel=MilkyChanceOfficial', NULL);
 
 COMMIT;
 

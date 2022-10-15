@@ -1,5 +1,6 @@
 package com.skilldistillery.music.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -19,8 +20,8 @@ public class SongDAOImpl implements SongDAO {
 	
 	@Override
 	public Song create(Song song) {
-		
-		return null;
+		em.persist(song);
+		return song;
 	}
 	
 	@Override
@@ -33,17 +34,45 @@ public class SongDAOImpl implements SongDAO {
 	public Song findById(int id) {
 		return em.find(Song.class, id);
 	}
+	
+//	@Override
+//	public List<Song> findRandomSongs(int numToGet) {
+//		List<Song> songs = new ArrayList<>();
+//		int randomNumGen;
+//		String query = "SELECT COUNT(s) FROM Song s";
+//		long numSongsInDB = em.createQuery(query, Long.class).getSingleResult();
+//		if (numToGet > numSongsInDB) {
+//			numToGet = (int) numSongsInDB;
+//		}
+//		int[] indicesCollected = new int[numToGet];
+//		for (int i = 0; i < numToGet; i++) {
+//			randomNumGen = (int)(Math.random() * numToGet + 1);
+//			if 
+//			query = "SELECT s FROM Song s";
+//			indicesCollected[i] = 
+//		}
+//		
+//		return songs;
+//	}
 
 	@Override
-	public Song update(int id, Song song) {
-		
-		return null;
+	public Song update(int id, Song userSong) {
+		Song songBeingUpdated = em.find(Song.class, id);
+		if (songBeingUpdated != null) {
+			songBeingUpdated.setTitle(userSong.getTitle());
+		}
+		return songBeingUpdated;
 	}
 
 	@Override
 	public boolean delete(int id) {
-		
-		return false;
+		boolean successfulyDestroyed = false;
+		Song songToRemove = em.find(Song.class, id);
+		if (songToRemove != null) {
+			em.remove(songToRemove);
+			successfulyDestroyed = true;
+		}
+		return successfulyDestroyed;
 	}
 
 }
