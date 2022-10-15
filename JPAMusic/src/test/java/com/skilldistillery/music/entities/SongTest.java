@@ -1,7 +1,9 @@
 package com.skilldistillery.music.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -45,6 +47,14 @@ class SongTest {
 	void test_Song_entity_mapping() {
 		assertNotNull(song);
 		assertEquals("Tadow", song.getTitle());
+		assertEquals("Masego", song.getArtist());
+		assertEquals("Lady Lady", song.getAlbum());
+		assertFalse(song.getIsSingle());
+		assertEquals("FKJ", song.getFeaturedArtist());
+		assertEquals("Electronic/Jazz", song.getGenre());
+		assertEquals(301, song.getLengthInSeconds());
+		assertEquals(2017, song.getReleaseYear());
+		assertEquals("=hC8CH0Z3L54&ab_channel=Fkj", song.getVideoURL());
 	}
 
 }
