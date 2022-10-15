@@ -10,20 +10,24 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Music</h1>
-		<table>
+		<table class="table table-dark table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
 					<th>Title</th>
+					<th>Artist</th>
+					<th>Album</th>
+					<th>Genre</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="aSong" items="${songs}">
 					<tr>
-						<td>${aSong.id}</td>
-						<td>${aSong.title}</td>
-						<%-- <td><a href="getSong.do?fid=${aSong.id}">${aSong.title}</a></td> --%>
+						<td><a href="show.do?id=${aSong.id}">${aSong.title}</a><c:choose><c:when test="${! empty aSong.featuredArtist}"> (feat. ${aSong.featuredArtist}) </c:when></c:choose><c:choose><c:when test="${! empty aSong.remixBy}">- ${aSong.remixBy} Remix</c:when></c:choose></td>
+						<td>${aSong.artist}</td>
+						<td><c:choose><c:when test="${!empty aSong.album}">${aSong.album} </c:when></c:choose><c:choose><c:when test="${aSong.isSingle}">(Single)</c:when></c:choose></td>
+						<td>${aSong.genre}</td>
+						<%-- <td>${aSong.}</td> --%>
+						<td></td>
 					</tr>
 				</c:forEach>
 			</tbody>
