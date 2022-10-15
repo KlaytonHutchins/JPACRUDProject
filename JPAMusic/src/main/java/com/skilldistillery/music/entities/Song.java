@@ -8,44 +8,61 @@ import javax.persistence.Id;
 
 @Entity
 public class Song {
-	
+
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
-	
+
 	private String title;
-	
+
 	private String artist;
-	
+
 	private String album;
 
-	@Column(name="is_single")
+	@Column(name = "is_single")
 	private boolean isSingle;
 
-	@Column(name="featured_artist")
+	@Column(name = "featured_artist")
 	private String featuredArtist;
 
-	@Column(name="remix_by")
+	@Column(name = "remix_by")
 	private String remixBy;
 
 	private String genre;
 
-	@Column(name="length_seconds")
+	@Column(name = "length_seconds")
 	private int lengthInSeconds;
 
-	@Column(name="release_year")
+	@Column(name = "release_year")
 	private int releaseYear;
 
-	@Column(name="video_url")
+	@Column(name = "video_url")
 	private String videoURL;
 
-	@Column(name="album_url")
+	@Column(name = "album_url")
 	private String albumURL;
-	
+
 //	methods ---------------------------------------------------------------------------------------
-	
-	public Song() {}
-	
+
+	public Song() {
+	}
+
+	public Song(String title, String artist, String album, boolean isSingle, String featuredArtist, String remixBy,
+			String genre, int lengthInSeconds, int releaseYear, String videoURL, String albumURL) {
+		super();
+		this.title = title;
+		this.artist = artist;
+		this.album = album;
+		this.isSingle = isSingle;
+		this.featuredArtist = featuredArtist;
+		this.remixBy = remixBy;
+		this.genre = genre;
+		this.lengthInSeconds = lengthInSeconds;
+		this.releaseYear = releaseYear;
+		this.videoURL = videoURL;
+		this.albumURL = albumURL;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -149,5 +166,5 @@ public class Song {
 				+ ", lengthInSeconds=" + lengthInSeconds + ", releaseYear=" + releaseYear + ", videoURL=" + videoURL
 				+ ", albumURL=" + albumURL + "]";
 	}
-	
+
 }

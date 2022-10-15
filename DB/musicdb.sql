@@ -57,6 +57,7 @@ INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_art
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (3, 'Dancin', 'Aaron Smith', NULL, 1, NULL, 'Krono', 'Deep House', 256, 2013, '=0XFudmaObLI&ab_channel=TheSoundYouNeed', NULL);
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (4, 'Blue Lagoon', 'LVSN & FIXL', NULL, 1, 'Finn Kleffmann', NULL, 'Tropical House', 188, 2021, '=MjCvkWEfgKc&ab_channel=TropicalHouseRecords', NULL);
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (5, 'Stolen Dance', 'Milky Chance', 'Sadnecessary', 1, NULL, NULL, 'Indie Pop', 313, 2013, '=iX-QaNzd-0Y&ab_channel=MilkyChanceOfficial', NULL);
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`, `album_url`) VALUES (6, 'The Last Goodbye', 'ODESZA', 'The Last Goodbye', 1, 'Betty LaVette', NULL, 'Dance', 358, 2022, '=GpuUOl6ddVI&ab_channel=ODESZA', NULL);
 
 COMMIT;
 

@@ -14,8 +14,8 @@
 <h2>${song.artist}</h2>
 <h2><c:choose><c:when test="${!empty song.album}">${song.album} </c:when></c:choose><c:choose><c:when test="${song.isSingle}">(Single)</c:when></c:choose></h2>
 <h2>${song.genre}</h2>
-<form action="updateSong.do?id=${song.id}"><button type="submit" class="btn btn-dark">Update Song Info</button></form>
-<form action="deleteSong.do?id=${song.id}"><button type="submit" class="btn btn-dark">Delete This Song</button></form>
+<form action="updateSong.do" method="get"><button name="id" value="${song.id}" type="submit" class="btn btn-dark">Update Song Info</button></form>
+<form action="deleteSong.do" method="post"><button name="id" value="${song.id}" type="submit" class="btn btn-dark">Delete This Song</button></form>
 
 </div>
 <jsp:include page="../bootstrapFoot.jsp" />
