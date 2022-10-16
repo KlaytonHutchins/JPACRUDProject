@@ -38,6 +38,9 @@
   <input name="update-album" type="text" class="form-control" placeholder="${song.album}" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- single -->
+
+<input name="update-isSingle" value="off" type="hidden">
+
 <c:choose><c:when test="${song.isSingle}">
 <div class="form-check form-switch">
   <input name="update-isSingle" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
@@ -65,7 +68,6 @@
   <span class="input-group-text" id="basic-addon1">Release Year</span>
   <input name="update-releaseYear" type="text" class="form-control" placeholder="${song.releaseYear}" aria-label="Username" aria-describedby="basic-addon1">
 </div>
-
 <!-- video url -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v</span>

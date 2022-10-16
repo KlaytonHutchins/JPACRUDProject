@@ -55,7 +55,7 @@ public class SongController {
 							@RequestParam("update-releaseYear") String releaseYear,
 							@RequestParam("update-videoURL") String videoURL,
 							@RequestParam("update-albumURL") String albumURL) {
-		System.out.println(id);
+		if (isSingle.equals("on")) isSingle = "true";
 		ModelAndView mav = new ModelAndView();
 		Song song = songDao.findById(Integer.parseInt(id));
 		if (!title.isEmpty()) song.setTitle(title);
@@ -79,11 +79,37 @@ public class SongController {
 		return "views/newSongForm";
 	}
 	
-	@RequestMapping(path = "addSong.do", method = RequestMethod.POST)
-	public String addSong(Model model) {
-		Song song = null;
-		model.addAttribute("song", songDao.create(song));
-		return "views/showOneSong";
+	@RequestMapping(path = "addSong.do", params = {"make-title","make-artist","make-featuredArtist","make-remixBy","make-album","make-isSingle","make-genre","make-length","make-releaseYear","make-videoURL","make-albumURL"}, method = RequestMethod.POST)
+	public ModelAndView addSong(@RequestParam("make-title") String title,
+							@RequestParam("make-artist") String artist,
+							@RequestParam("make-featuredArtist") String featuredArtist,
+							@RequestParam("make-remixBy") String remixedBy,
+							@RequestParam("make-album") String album,
+							@RequestParam("make-isSingle") String isSingle,
+							@RequestParam("make-genre") String genre,
+							@RequestParam("make-length") String length,
+							@RequestParam("make-releaseYear") String releaseYear,
+							@RequestParam("make-videoURL") String videoURL,
+							@RequestParam("make-albumURL") String albumURL) {
+		if (isSingle.equals("on")) isSingle = "true";
+		ModelAndView mav = new ModelAndView();
+		Song song = new Song();
+		if (!title.isEmpty()) song.setTitle(title);
+		else song.setTitle(" ");
+		if (!artist.isEmpty()) song.setArtist(artist);
+		if (!album.isEmpty()) song.setAlbum(album);
+		if (!isSingle.isEmpty()) song.setIsSingle(Boolean.parseBoolean(isSingle));
+		else song.setIsSingle(false);
+		if (!featuredArtist.isEmpty()) song.setFeaturedArtist(featuredArtist);
+		if (!remixedBy.isEmpty()) song.setRemixBy(remixedBy);
+		if (!genre.isEmpty()) song.setGenre(genre);
+		if (!length.isEmpty()) song.setLengthInSeconds(Integer.parseInt(length));
+		if (!releaseYear.isEmpty()) song.setReleaseYear(Integer.parseInt(releaseYear));
+		if (!videoURL.isEmpty()) song.setVideoURL(videoURL);
+		if (!albumURL.isEmpty()) song.setAlbumURL(albumURL);
+		mav.addObject("song", songDao.create(song));
+		mav.setViewName("views/showOneSong");
+		return mav;
 	}
 	
 	@RequestMapping(path = "deleteSong.do", method = RequestMethod.POST)

@@ -10,64 +10,67 @@
 </head>
 <body>
 <div class="container">
-<form action="">
+<form action="addSong.do" method="post">
 <!-- title -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Title</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-title" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- artist -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Artist</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-artist" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- featured artist -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Featuring</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-featuredArtist" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- remixed by -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Remixed by</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-remixBy" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- album -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Album</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-album" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- single -->
+
+<input name="make-isSingle" value="off" type="hidden">
+
 <div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  <input name="make-isSingle" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
   <label class="form-check-label" for="flexSwitchCheckDefault">Released As Single</label>
 </div>
+
 <!-- genre -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Genre</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-genre" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- length -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Length</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-length" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- release year -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Release Year</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  <input name="make-releaseYear" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
-
 <!-- video url -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v</span>
-  <input type="text" class="form-control" id="video-url" aria-describedby="basic-addon3">
+  <input name="make-videoURL" type="text" class="form-control" id="video-url" aria-describedby="basic-addon3">
 </div>
 <!-- album url -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon3">https://www.</span>
-  <input type="text" class="form-control" id="album-url" aria-describedby="basic-addon3">
+  <input name="make-albumURL" type="text" class="form-control" id="album-url" aria-describedby="basic-addon3">
 </div>
-
+<button type="submit" class="btn btn-dark">Add This Song</button>
 </form>
 </div>
 <jsp:include page="../bootstrapFoot.jsp" />
