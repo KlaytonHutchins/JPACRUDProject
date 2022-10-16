@@ -9,6 +9,7 @@
 <jsp:include page="../bootstrapHead.jsp" />
 </head>
 <body>
+	<jsp:include page="../navbar.jsp"/>
 	<div class="container">
 		<table class="table table-dark table-striped">
 			<thead>

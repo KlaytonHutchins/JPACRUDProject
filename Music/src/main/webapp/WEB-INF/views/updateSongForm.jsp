@@ -9,6 +9,7 @@
 <jsp:include page="../bootstrapHead.jsp" />
 </head>
 <body>
+<jsp:include page="../navbar.jsp"/>
 <div class="container">
 <form action="updateSong.do" method="post">
 <input name="id" value="${song.id}" type="hidden">
