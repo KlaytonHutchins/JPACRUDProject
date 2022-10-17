@@ -40,20 +40,20 @@ public class SongDAOImpl implements SongDAO {
 		List<Song> songs = findAll();
 		List<Song> resultList = new ArrayList<>();
 		List<Integer> resultIds = new ArrayList<>();
-		int randomNumGen;
 		int numSongsInDB = songs.size();
 		if (numToGet > numSongsInDB) {
 			numToGet = numSongsInDB;
 		}
-		int[] indicesCollected = new int[numToGet];
 		while (numToGet > resultList.size()) {
-			randomNumGen = (int)(Math.random() * numSongsInDB + 1);
-			if (!resultIds.contains(randomNumGen)) {
-				resultList.add(this.findById(randomNumGen));
-				resultIds.add(randomNumGen);
+			int randomNumGen = (int)(Math.random() * numSongsInDB + 1);
+			if (!resultIds.contains(randomNumGen) && this.findById(randomNumGen) != null) {
+				try {
+					resultList.add(this.findById(randomNumGen));
+					resultIds.add(randomNumGen);
+				} catch (NullPointerException npe) {
+				}
 			}
 		}
-		
 		return resultList;
 	}
 	
