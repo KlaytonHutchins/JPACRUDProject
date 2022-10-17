@@ -9,6 +9,7 @@
 <jsp:include page="../bootstrapHead.jsp" />
 </head>
 <body>
+<jsp:include page="../navbar.jsp"/>
 <div class="container">
 <form action="addSong.do" method="post">
 <!-- title -->
@@ -62,13 +63,8 @@
 </div>
 <!-- video url -->
 <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v</span>
+  <span class="input-group-text" id="basic-addon3">https://www.youtube.com/embed/</span>
   <input name="make-videoURL" type="text" class="form-control" id="video-url" aria-describedby="basic-addon3">
-</div>
-<!-- album url -->
-<div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon3">https://www.</span>
-  <input name="make-albumURL" type="text" class="form-control" id="album-url" aria-describedby="basic-addon3">
 </div>
 <button type="submit" class="btn btn-dark">Add This Song</button>
 </form>

@@ -71,13 +71,8 @@
 </div>
 <!-- video url -->
 <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon3">https://www.youtube.com/watch?v</span>
+  <span class="input-group-text" id="basic-addon3">https://www.youtube.com/embed/</span>
   <input name="update-videoURL" type="text" class="form-control" placeholder="${song.videoURL}" id="video-url" aria-describedby="basic-addon3">
-</div>
-<!-- album url -->
-<div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon3">https://www.</span>
-  <input name="update-albumURL" type="text" class="form-control" placeholder="${song.albumURL}" id="album-url" aria-describedby="basic-addon3">
 </div>
 <button type="submit" class="btn btn-dark">Update Song Info</button>
 </form>

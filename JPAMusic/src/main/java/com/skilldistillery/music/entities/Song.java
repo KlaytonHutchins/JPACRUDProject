@@ -39,16 +39,13 @@ public class Song {
 	@Column(name = "video_url")
 	private String videoURL;
 
-	@Column(name = "album_url")
-	private String albumURL;
-
 //	methods ---------------------------------------------------------------------------------------
 
 	public Song() {
 	}
 
 	public Song(String title, String artist, String album, boolean isSingle, String featuredArtist, String remixBy,
-			String genre, int lengthInSeconds, int releaseYear, String videoURL, String albumURL) {
+			String genre, int lengthInSeconds, int releaseYear, String videoURL) {
 		super();
 		this.title = title;
 		this.artist = artist;
@@ -60,7 +57,6 @@ public class Song {
 		this.lengthInSeconds = lengthInSeconds;
 		this.releaseYear = releaseYear;
 		this.videoURL = videoURL;
-		this.albumURL = albumURL;
 	}
 
 	public int getId() {
@@ -151,20 +147,12 @@ public class Song {
 		this.videoURL = videoURL;
 	}
 
-	public String getAlbumURL() {
-		return albumURL;
-	}
-
-	public void setAlbumURL(String albumURL) {
-		this.albumURL = albumURL;
-	}
-
 	@Override
 	public String toString() {
 		return "Song [id=" + id + ", title=" + title + ", artist=" + artist + ", album=" + album + ", isSingle="
 				+ isSingle + ", featuredArtist=" + featuredArtist + ", remixBy=" + remixBy + ", genre=" + genre
 				+ ", lengthInSeconds=" + lengthInSeconds + ", releaseYear=" + releaseYear + ", videoURL=" + videoURL
-				+ ", albumURL=" + albumURL + "]";
+				+ "]";
 	}
 
 }

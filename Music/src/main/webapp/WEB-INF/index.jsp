@@ -11,7 +11,7 @@
 <body>
 	<jsp:include page="navbar.jsp"/>
 	<div class="container">
-		<table class="table table-dark table-striped">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Title</th>
@@ -23,12 +23,10 @@
 			<tbody>
 				<c:forEach var="aSong" items="${songs}">
 					<tr>
-						<td><a href="show.do?id=${aSong.id}">${aSong.title}</a><c:choose><c:when test="${! empty aSong.featuredArtist}"> (feat. ${aSong.featuredArtist}) </c:when></c:choose><c:choose><c:when test="${! empty aSong.remixBy}">- ${aSong.remixBy} Remix</c:when></c:choose></td>
+						<td><a href="show.do?id=${aSong.id}">${aSong.title}</a><c:choose><c:when test="${! empty aSong.featuredArtist}"> (feat. ${aSong.featuredArtist}) </c:when></c:choose><c:choose><c:when test="${! empty aSong.remixBy}"> - ${aSong.remixBy} Remix</c:when></c:choose></td>
 						<td>${aSong.artist}</td>
 						<td><c:choose><c:when test="${!empty aSong.album}">${aSong.album} </c:when></c:choose><c:choose><c:when test="${aSong.isSingle}">(Single)</c:when></c:choose></td>
 						<td>${aSong.genre}</td>
-						<%-- <td>${aSong.}</td> --%>
-						<td></td>
 					</tr>
 				</c:forEach>
 			</tbody>
