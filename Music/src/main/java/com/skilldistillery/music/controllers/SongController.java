@@ -119,7 +119,7 @@ public class SongController {
 		songDao.delete(id);
 		InternalResourceView resourceView = new InternalResourceView("/WEB-INF/index.jsp");
 		ModelAndView mav = new ModelAndView(resourceView);
-		mav.addObject("songs", songDao.findAll());
+		mav.addObject("songs", songDao.findRandomSongs(5));
 		return mav;
 	}
 	
