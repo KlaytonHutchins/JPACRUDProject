@@ -3,3 +3,7 @@
 body {
 background-color: #36FEB7;
 }
+
+a, a:hover {
+	color:SaddleBrown;
+}
