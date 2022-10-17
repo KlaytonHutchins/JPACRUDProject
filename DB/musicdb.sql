@@ -75,6 +75,8 @@ INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_art
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`) VALUES (22, 'Never Be Like You', 'Flume', 'Skin', 1, 'Kai', NULL, 'Dance', 233, 2016, 'Ly7uj0JwgKg');
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`) VALUES (23, 'The Difference', 'Flume', NULL, 1, 'Toro y Moi', NULL, 'Dance', 139, 2020, 'MCRiUi28UpA');
 INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`) VALUES (24, 'Rushing Back', 'Flume', NULL, 1, 'Vera Blue', NULL, 'Dance', 231, 2019, 'oEJ6eMBrDqY');
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`) VALUES (25, 'Prayer In C', 'Lilly Wood & The Prick', 'Prayer', 1, NULL, 'Robin Schulz', 'Dance', 201, 2014, 'HF45J4PFWy0');
+INSERT INTO `song` (`id`, `title`, `artist`, `album`, `is_single`, `featured_artist`, `remix_by`, `genre`, `length_seconds`, `release_year`, `video_url`) VALUES (26, 'Heart So Big', 'Matoma', NULL, 1, 'Arizona', NULL, 'Dance', 219, 2022, 'ZjLwSpSQTxk');
 
 COMMIT;
 
