@@ -72,6 +72,12 @@ public class SongController {
 		return "views/showAllSongs";
 	}
 	
+	@RequestMapping(path = "search.do", params = {"search"})
+	public String displaySearchedSongs(@RequestParam("search") String search, Model model) {
+		model.addAttribute("songs", songDao.findSongsBySearch(search));
+		return "views/showAllSongs";
+	}
+	
 	@RequestMapping(path = "updateSong.do", method = RequestMethod.GET)
 	public String updateSongForm(int id, Model model) {
 		model.addAttribute("song", songDao.findById(id));

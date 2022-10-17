@@ -14,6 +14,8 @@ public interface SongDAO {
 	
 	List<Song> findRandomSongs(int numToGet);
 	
+	List<Song> findSongsBySearch(String search);
+	
 	Song update(int id, Song song);
 	
 	boolean delete(int id);

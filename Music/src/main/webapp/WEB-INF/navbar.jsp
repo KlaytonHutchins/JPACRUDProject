@@ -19,8 +19,8 @@
           <a class="nav-link" href="addSong.do" style="color:white">Add New Song</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Title, Artist, Album" aria-label="Search">
+      <form action ="search.do" class="d-flex" role="search">
+        <input name="search" class="form-control me-2" type="search" placeholder="Title, Artist, Album" aria-label="Search">
         <button class="btn btn-outline-dark" type="submit">Search</button>
       </form>
     </div>

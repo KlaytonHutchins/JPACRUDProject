@@ -47,7 +47,7 @@ public class SongDAOImpl implements SongDAO {
 		}
 		int[] indicesCollected = new int[numToGet];
 		while (numToGet > resultList.size()) {
-			randomNumGen = (int)(Math.random() * numToGet + 1);
+			randomNumGen = (int)(Math.random() * numSongsInDB + 1);
 			if (!resultIds.contains(randomNumGen)) {
 				resultList.add(this.findById(randomNumGen));
 				resultIds.add(randomNumGen);
@@ -55,6 +55,12 @@ public class SongDAOImpl implements SongDAO {
 		}
 		
 		return resultList;
+	}
+	
+	@Override
+	public List<Song> findSongsBySearch(String search) {
+		String query = "SELECT s FROM Song s WHERE s.title LIKE :title OR s.artist LIKE :artist OR s.album LIKE :album";
+		return em.createQuery(query, Song.class).setParameter("title", search).setParameter("artist", search).setParameter("album", search).getResultList();
 	}
 
 	@Override
