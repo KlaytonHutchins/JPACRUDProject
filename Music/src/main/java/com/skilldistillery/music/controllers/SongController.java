@@ -54,7 +54,7 @@ public class SongController {
 		return mav;
 	}
 	
-	@RequestMapping(path={"/", "home.do"})
+	@RequestMapping(path={"/", "home.do", "/Music/"})
 	public String index(Model model) {
 		model.addAttribute("songs", songDao.findRandomSongs(5));
 		return "index";
