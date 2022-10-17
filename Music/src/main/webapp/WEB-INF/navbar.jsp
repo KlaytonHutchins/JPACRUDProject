@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="css/main.css">
 <nav class="navbar navbar-expand-lg" style="background-color: #0E9F6C" color="white">
   <div class="container-fluid">
-    <strong style="color:white">Music</strong>
+    <strong style="color:white">Music Playlist</strong>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

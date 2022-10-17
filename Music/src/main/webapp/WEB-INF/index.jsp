@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Music</title>
+<title>Klayton's Music Playlist</title>
 <jsp:include page="bootstrapHead.jsp" />
 </head>
 <body>
