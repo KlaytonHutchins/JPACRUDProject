@@ -23,7 +23,7 @@
 		<div class="row g-0">
 			<div class="col-7 text-center">
 				<iframe width="560" height="315"
-					src="https://www.youtube.com/embed/${song.videoURL}"
+					src="https://www.youtube.com/embed/${song.videoURL}?&autoplay=1"
 					title="YouTube video player" frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
@@ -42,14 +42,18 @@
 			</div>
 		</div>
 		<div class="row">
-		<div class="col-6" style="text-align:center"><form action="updateSong.do" method="get">
-					<button name="id" value="${song.id}" type="submit"
-						class="btn btn-dark">Update Song Info</button>
-				</form></div>
-				<div class="col-6" style="text-align:center"><form action="deleteSong.do" method="post">
-					<button name="id" value="${song.id}" type="submit"
-						class="btn btn-dark">Delete This Song</button>
-				</form></div>
+		<div class="col-4" style="text-align:center">
+			<form action="updateSong.do" method="get">
+				<button name="id" value="${song.id}" type="submit" class="btn btn-dark">Update Song Info</button>
+			</form></div>
+		<div class="col-4" style="text-align:center">
+			<form action="showNext.do" method="get">
+				<button name="id" value="${song.id}" type="submit" class="btn btn-dark">Next Song</button>
+			</form></div>
+		<div class="col-4" style="text-align:center">
+			<form action="deleteSong.do" method="post">
+				<button name="id" value="${song.id}" type="submit" class="btn btn-dark">Delete This Song</button>
+			</form></div>
 		</div>
 
 	</div>

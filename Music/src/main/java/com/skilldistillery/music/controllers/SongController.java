@@ -41,6 +41,12 @@ public class SongController {
 		return "views/showOneSong";
 	}
 	
+	@RequestMapping(path = "showNext.do")
+	public String displayNextSong(int id, Model model) {
+		model.addAttribute("song", songDao.findById(id+1));
+		return "views/showOneSong";
+	}
+	
 	@RequestMapping(path = "showAll.do")
 	public String displayAllSongs(Model model) {
 		model.addAttribute("songs", songDao.findAll());
