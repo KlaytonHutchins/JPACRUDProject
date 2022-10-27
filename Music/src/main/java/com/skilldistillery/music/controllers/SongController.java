@@ -23,38 +23,13 @@ public class SongController {
 		return "views/newSongForm";
 	}
 	
-	@RequestMapping(path = "addSong.do", params = {"make-title","make-artist","make-featuredArtist","make-remixBy","make-album","make-isSingle","make-genre","make-length","make-releaseYear","make-videoURL"}, method = RequestMethod.POST)
-	public ModelAndView addSong(@RequestParam("make-title") String title,
-			@RequestParam("make-artist") String artist,
-			@RequestParam("make-featuredArtist") String featuredArtist,
-			@RequestParam("make-remixBy") String remixedBy,
-			@RequestParam("make-album") String album,
-			@RequestParam("make-isSingle") String isSingle,
-			@RequestParam("make-genre") String genre,
-			@RequestParam("make-length") String length,
-			@RequestParam("make-releaseYear") String releaseYear,
-			@RequestParam("make-videoURL") String videoURL) {
-		if (isSingle.equals("on")) isSingle = "true";
-		ModelAndView mav = new ModelAndView();
-		Song song = new Song();
-		if (!title.isEmpty()) song.setTitle(title);
-		else song.setTitle(" ");
-		if (!artist.isEmpty()) song.setArtist(artist);
-		if (!album.isEmpty()) song.setAlbum(album);
-		if (!isSingle.isEmpty()) song.setIsSingle(Boolean.parseBoolean(isSingle));
-		else song.setIsSingle(false);
-		if (!featuredArtist.isEmpty()) song.setFeaturedArtist(featuredArtist);
-		if (!remixedBy.isEmpty()) song.setRemixBy(remixedBy);
-		if (!genre.isEmpty()) song.setGenre(genre);
-		if (!length.isEmpty()) song.setLengthInSeconds(Integer.parseInt(length));
-		if (!releaseYear.isEmpty()) song.setReleaseYear(Integer.parseInt(releaseYear));
-		if (!videoURL.isEmpty()) song.setVideoURL(videoURL);
-		mav.addObject("song", songDao.create(song));
-		mav.setViewName("views/showOneSong");
-		return mav;
+	@RequestMapping(path = "addSong.do", method = RequestMethod.POST)
+	public String addSong(Song song, Model model) {
+		model.addAttribute("song", songDao.create(song));
+		return "views/showOneSong";
 	}
 	
-	@RequestMapping(path={"/", "home.do", "/Music/"})
+	@RequestMapping(path={"/", "home.do"})
 	public String index(Model model) {
 		model.addAttribute("songs", songDao.findRandomSongs(5));
 		return "index";
@@ -84,34 +59,11 @@ public class SongController {
 		return "views/updateSongForm";
 	}
 	
-	@RequestMapping(path = "updateSong.do", params = {"id","update-title","update-artist","update-featuredArtist","update-remixBy","update-album","update-isSingle","update-genre","update-length","update-releaseYear","update-videoURL"}, method = RequestMethod.POST)
-	public ModelAndView updateSong(@RequestParam("id") String id,
-							@RequestParam("update-title") String title,
-							@RequestParam("update-artist") String artist,
-							@RequestParam("update-featuredArtist") String featuredArtist,
-							@RequestParam("update-remixBy") String remixedBy,
-							@RequestParam("update-album") String album,
-							@RequestParam("update-isSingle") String isSingle,
-							@RequestParam("update-genre") String genre,
-							@RequestParam("update-length") String length,
-							@RequestParam("update-releaseYear") String releaseYear,
-							@RequestParam("update-videoURL") String videoURL) {
-		if (isSingle.equals("on")) isSingle = "true";
-		ModelAndView mav = new ModelAndView();
-		Song song = songDao.findById(Integer.parseInt(id));
-		if (!title.isEmpty()) song.setTitle(title);
-		if (!artist.isEmpty()) song.setArtist(artist);
-		if (!album.isEmpty()) song.setAlbum(album);
-		if (!isSingle.isEmpty()) song.setIsSingle(Boolean.parseBoolean(isSingle));
-		if (!featuredArtist.isEmpty()) song.setFeaturedArtist(featuredArtist);
-		if (!remixedBy.isEmpty()) song.setRemixBy(remixedBy);
-		if (!genre.isEmpty()) song.setGenre(genre);
-		if (!length.isEmpty()) song.setLengthInSeconds(Integer.parseInt(length));
-		if (!releaseYear.isEmpty()) song.setReleaseYear(Integer.parseInt(releaseYear));
-		if (!videoURL.isEmpty()) song.setVideoURL(videoURL);
-		mav.addObject("song", songDao.update(Integer.parseInt(id), song));
-		mav.setViewName("views/showOneSong");
-		return mav;
+	@RequestMapping(path = "updateSong.do", method = RequestMethod.POST)
+	public String updateSong(Song song, Model model) {
+		song = songDao.update(song.getId(), song);
+		model.addAttribute("song", song);
+		return "views/showOneSong";
 	}
 	
 	@RequestMapping(path = "deleteSong.do", method = RequestMethod.POST)
