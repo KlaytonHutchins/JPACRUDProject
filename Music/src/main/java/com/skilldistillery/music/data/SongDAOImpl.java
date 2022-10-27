@@ -63,7 +63,7 @@ public class SongDAOImpl implements SongDAO {
 	@Override
 	public List<Song> findSongsBySearch(String search) {
 		String query = "SELECT s FROM Song s WHERE s.title LIKE :title OR s.artist LIKE :artist OR s.album LIKE :album";
-		return em.createQuery(query, Song.class).setParameter("title", search).setParameter("artist", search).setParameter("album", search).getResultList();
+		return em.createQuery(query, Song.class).setParameter("title", "%"+search+"%").setParameter("artist", "%"+search+"%").setParameter("album", "%"+search+"%").getResultList();
 	}
 
 	@Override

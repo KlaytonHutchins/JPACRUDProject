@@ -5,7 +5,7 @@ This project allows a user to Create, Read, Update, and Delete Songs from a data
 
 - The Navbar is accessible on all pages of the website. It allows the user to return to the home page, navigate to a page which displays a list of all songs in the database, navigate to a page which allows the user to add a new song to the database, or to search the database for a title/artist/album and see a list of matching songs.
 
-- The Home page displays a list of 5 randomly generated songs from the database. The user can listen to any of these three songs via an embedded youtube link, or navigate to that song's page via a hyperlink.
+- The Home page displays a list of 5 randomly generated songs from the database. The user can listen to any of these 5 songs via an embedded youtube link, or navigate to that song's page via a hyperlink.
 
 - The View All Songs page simply lists all songs in the database, all of their information, and hyperlinks to that song's page.
 
