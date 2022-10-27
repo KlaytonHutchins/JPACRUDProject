@@ -11,9 +11,9 @@ This project allows a user to Create, Read, Update, and Delete Songs from a data
 
 - The Add New Song page is a form which allows the user to enter applicable information about a given song and submit it to be added to the database. Although the title column is a "NOT NULL" column in the database, all fields are optional on the website form. I made a choose to simply set the title of the film to a single space if the field was empty. Returning an error to the user would be a better option and something I would like to implement in the future.
 
-- The Search Bar allows the user to search the database for a list of songs that have a title, artist, or album field which match the search term. The search function does not allow for partial searches, so you must type the full title/artist/album to get the expected result. This is another functionality that I would like to revisit.
+- The Search Bar allows the user to search the database for a list of songs that have a title, artist, or album field which match the search term. The search function also allows for partial searches.
 
-- The Update Song page is only accessible from an individual song's page. The "Update Song Info" button redirects to a page very similar to the Add New Song page, but with the existing values as placeholders.
+- The Update Song page is only accessible from an individual song's page. The "Update Song Info" button redirects to a page very similar to the Add New Song page, but with the existing values autofilled into the appropriate fields.
 
 - The Delete Song button is also only accessible from an individual song's page, like the Update button. The Delete This Song button simply removes the song from the database. I would like to add a pop up window to ask if the user is sure they would like to delete the song.
 

@@ -43,7 +43,11 @@ public class SongController {
 	
 	@RequestMapping(path = "showNext.do")
 	public String displayNextSong(int id, Model model) {
-		model.addAttribute("song", songDao.findById(id+1));
+		id++;
+		while (songDao.findById(id) == null) {
+			id++;
+		}
+		model.addAttribute("song", songDao.findById(id));
 		return "views/showOneSong";
 	}
 	
