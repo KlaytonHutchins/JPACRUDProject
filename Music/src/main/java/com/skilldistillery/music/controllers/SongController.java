@@ -1,5 +1,7 @@
 package com.skilldistillery.music.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,9 +45,14 @@ public class SongController {
 	
 	@RequestMapping(path = "showNext.do")
 	public String displayNextSong(int id, Model model) {
+		List<Song> all = songDao.findAll();
+		int max = all.get(all.size()-1).getId();
 		id++;
 		while (songDao.findById(id) == null) {
 			id++;
+			if (id > max) {
+				id = 1;
+			}
 		}
 		model.addAttribute("song", songDao.findById(id));
 		return "views/showOneSong";
