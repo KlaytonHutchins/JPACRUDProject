@@ -68,11 +68,11 @@ public class SongDAOImpl implements SongDAO {
 
 	@Override
 	public Song update(int id, Song userSong) {
-		Song songBeingUpdated = em.find(Song.class, id);
-		if (songBeingUpdated != null) {
-			songBeingUpdated.setTitle(userSong.getTitle());
-		}
-		return songBeingUpdated;
+		em.remove(em.find(Song.class, id));
+		Song resultSong = new Song(userSong.getTitle(), userSong.getArtist(), userSong.getAlbum(), userSong.getIsSingle(), userSong.getFeaturedArtist(), userSong.getRemixBy(),
+				userSong.getGenre(), userSong.getLengthInSeconds(), userSong.getReleaseYear(), userSong.getVideoURL());
+		em.persist(resultSong);
+		return resultSong;
 	}
 
 	@Override
