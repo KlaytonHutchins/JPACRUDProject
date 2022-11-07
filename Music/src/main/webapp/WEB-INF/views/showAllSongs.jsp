@@ -27,14 +27,14 @@
 					<tr>
 						<td><a href="show.do?id=${aSong.id}">${aSong.title}</a>
 						<c:choose>
-								<c:when test="${! empty aSong.featuredArtist}"> (feat. ${aSong.featuredArtist}) </c:when>
+								<c:when test="${! empty aSong.featuredArtist}">&nbsp;(feat. ${aSong.featuredArtist})</c:when>
 							</c:choose>
 							<c:choose>
-								<c:when test="${! empty aSong.remixBy}">- ${aSong.remixBy} Remix</c:when>
+								<c:when test="${! empty aSong.remixBy}">&nbsp;- ${aSong.remixBy} Remix</c:when>
 							</c:choose></td>
 						<td>${aSong.artist}</td>
 						<td><c:choose>
-								<c:when test="${!empty aSong.album}">${aSong.album} </c:when>
+								<c:when test="${!empty aSong.album}">${aSong.album}&nbsp;</c:when>
 							</c:choose>
 							<c:choose>
 								<c:when test="${aSong.isSingle}">(Single)</c:when>

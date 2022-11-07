@@ -29,16 +29,16 @@
 					allowfullscreen></iframe>
 			</div>
 			<div class="col-5" style="text-align: left">
-				<div class="row"><h3><u>Artist: </u> ${song.artist}</h3></div>
-				<div class="row"><h3><u>Album: </u> <c:choose>
-						<c:when test="${!empty song.album}">${song.album} </c:when>
+				<div class="row"><h3><u>Artist:</u>&nbsp;${song.artist}</h3></div>
+				<div class="row"><h3><u>Album:</u>&nbsp;<c:choose>
+						<c:when test="${!empty song.album}">${song.album}&nbsp;</c:when>
 					</c:choose>
 					<c:choose>
 						<c:when test="${song.isSingle}">(Single)</c:when>
 					</c:choose></h3></div>
-				<div class="row"><h3><u>Genre: </u> ${song.genre}</h3></div>
-				<div class="row"><h3><u>Length: </u> ${song.lengthInSeconds} seconds</h3></div>
-				<div class="row"><h3><u>Release Year: </u> ${song.releaseYear}</h3></div>
+				<div class="row"><h3><u>Genre:</u>&nbsp;${song.genre}</h3></div>
+				<div class="row"><h3><u>Length:</u>&nbsp;${song.lengthInSeconds} seconds</h3></div>
+				<div class="row"><h3><u>Release Year:</u>&nbsp;${song.releaseYear}</h3></div>
 			</div>
 		</div>
 		<div class="row">
