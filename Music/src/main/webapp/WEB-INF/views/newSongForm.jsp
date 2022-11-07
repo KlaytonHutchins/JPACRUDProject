@@ -38,14 +38,10 @@
   <input name="album" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 <!-- single -->
-
-<input name="isSingle" value="off" type="hidden">
-
 <div class="form-check form-switch">
-  <input name="make-isSingle" class="form-check-input" type="checkbox" role="switch" id="isSingle">
+  <input name="isSingle" class="form-check-input" type="checkbox" role="switch" id="isSingle">
   <label class="form-check-label" for="isSingle">Released As Single</label>
 </div>
-
 <!-- genre -->
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Genre</span>

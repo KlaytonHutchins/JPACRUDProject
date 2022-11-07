@@ -27,7 +27,8 @@ public class SongController {
 	
 	@RequestMapping(path = "addSong.do", method = RequestMethod.POST)
 	public String addSong(Song song, Model model) {
-		model.addAttribute("song", songDao.create(song));
+		song = songDao.create(song);
+		model.addAttribute("song", song);
 		return "views/showOneSong";
 	}
 	
