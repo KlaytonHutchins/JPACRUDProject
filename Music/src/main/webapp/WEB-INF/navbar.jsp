@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="css/main.css">
 <nav class="navbar navbar-expand-lg" style="background-color: #0E9F6C">
   <div class="container-fluid">
     <strong style="color:white">Music Playlist</strong>
