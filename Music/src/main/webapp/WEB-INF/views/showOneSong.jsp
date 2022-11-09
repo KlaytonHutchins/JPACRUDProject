@@ -38,25 +38,31 @@
 					</c:choose></h3></div>
 				<div class="row"><h3><u>Genre:</u>&nbsp;${song.genre}</h3></div>
 				<div class="row"><h3><u>Length:</u>&nbsp;${song.lengthInSeconds} seconds</h3></div>
+				<div id="length" value="${song.lengthInSeconds}"></div>
 				<div class="row"><h3><u>Release Year:</u>&nbsp;${song.releaseYear}</h3></div>
 			</div>
 		</div>
 		<div class="row">
-		<div class="col-4" style="text-align:center">
+		<div class="col-3" style="text-align:center">
 			<form action="updateSong.do" method="get">
 				<button name="id" value="${song.id}" type="submit" class="btn btn-dark">Update Song Info</button>
 			</form></div>
-		<div class="col-4" style="text-align:center">
-			<form action="showNext.do" method="get">
-				<button name="id" value="${song.id}" type="submit" class="btn btn-dark">Next Song</button>
+		<div class="col-3" style="text-align:center">
+			<form action="showPrevious.do" method="get">
+				<button name="id" value="${song.id}" type="submit" class="btn btn-dark">Previous Song</button>
 			</form></div>
-		<div class="col-4" style="text-align:center">
+		<div class="col-3" style="text-align:center">
+			<form action="showNext.do" method="get" id="next" name="next">
+				<button id="here" name="id" value="${song.id}" type="submit" class="btn btn-dark">Next Song</button>
+			</form></div>
+		<div class="col-3" style="text-align:center">
 			<form action="deleteSong.do" method="post">
 				<button name="id" value="${song.id}" type="submit" class="btn btn-dark">Delete This Song</button>
 			</form></div>
 		</div>
 
 	</div>
+	<!-- <script type="text/javascript" src="../static/nextSong.js" charset="utf-8"></script> -->
 	<jsp:include page="../bootstrapFoot.jsp" />
 </body>
 </html>

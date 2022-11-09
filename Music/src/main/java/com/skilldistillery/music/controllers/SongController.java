@@ -1,5 +1,6 @@
 package com.skilldistillery.music.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,21 @@ public class SongController {
 			id++;
 			if (id > max) {
 				id = 1;
+			}
+		}
+		model.addAttribute("song", songDao.findById(id));
+		return "views/showOneSong";
+	}
+	
+	@RequestMapping(path = "showPrevious.do")
+	public String displayPreviousSong(int id, Model model) {
+		List<Song> all = songDao.findAll();
+		int max = all.get(all.size()-1).getId();
+		id--;
+		while (songDao.findById(id) == null) {
+			id--;
+			if (id < 0) {
+				id = max;
 			}
 		}
 		model.addAttribute("song", songDao.findById(id));
